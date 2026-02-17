@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pock/base/theme_colors.dart';
 import 'package:pock/component/custom_text.dart';
+import 'package:pock/screen/money.dart';
 
 class ActionButton extends StatelessWidget {
   final String menuId;
@@ -17,7 +18,7 @@ class ActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double buttonHeight = 70;
-    final BorderRadius borderRadius = BorderRadius.circular(buttonHeight / 2);
+    final BorderRadius borderRadius = .circular(buttonHeight / 2);
 
     return Column(
       children: [
@@ -35,7 +36,10 @@ class ActionButton extends StatelessWidget {
                   case 'money':
                     debugPrint('action button: $menuId');
                   case 'withdraw':
-                    debugPrint('action button: $menuId');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Money()),
+                    );
                   case 'transfer':
                     debugPrint('action button: $menuId');
                   default:

@@ -14,6 +14,7 @@ class ActionSection extends StatelessWidget {
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      spacing: 12,
       children: [
         for (var item in listAction.asMap().entries) ...[
           Expanded(
@@ -23,7 +24,6 @@ class ActionSection extends StatelessWidget {
               text: item.value['title'],
             ),
           ),
-          if (item.key < listAction.length - 1) SizedBox(width: 12),
         ],
       ],
     );

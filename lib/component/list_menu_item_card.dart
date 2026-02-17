@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pock/base/theme_colors.dart';
 import 'package:pock/component/custom_text.dart';
+import 'package:pock/screen/balance.dart';
+import 'package:pock/screen/contract.dart';
+import 'package:pock/screen/money.dart';
 
 class ListMenuItemCard extends StatelessWidget {
   final int index;
@@ -20,7 +23,7 @@ class ListMenuItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final BorderRadius borderRadius = BorderRadius.circular(18);
+    final BorderRadius borderRadius = .circular(18);
     final Color backgroundColor =
         Colors.grey[(index + 1) * 100] ?? Colors.white;
 
@@ -37,18 +40,27 @@ class ListMenuItemCard extends StatelessWidget {
             onTap: () {
               switch (menuId) {
                 case 'withdrawals':
-                  debugPrint('list item card: $menuId');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Money()),
+                  );
                 case 'payments':
-                  debugPrint('list item card: $menuId');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Contract()),
+                  );
                 case 'balance':
-                  debugPrint('list item card: $menuId');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Balance()),
+                  );
                 default:
                   debugPrint('list item card: $menuId');
               }
             },
             borderRadius: borderRadius,
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
+              padding: const .symmetric(horizontal: 16, vertical: 18),
               child: Row(
                 children: [
                   CircleAvatar(

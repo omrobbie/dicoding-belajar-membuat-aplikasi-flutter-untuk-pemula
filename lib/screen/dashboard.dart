@@ -21,7 +21,7 @@ class Dashboard extends StatelessWidget {
       children: [
         ProfileSection(),
         ActionSection(),
-        const SizedBox(height: 32),
+        const SizedBox(height: 24),
         ListMenuSection(),
       ],
     );
