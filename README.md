@@ -32,7 +32,7 @@ Tips: Anda dapat mencari referensi UI dari website seperti dribbble atau behance
 
 #### Berikut kerangka tampilan yang bisa Anda gunakan sebagai referensi:
 
-<img src="https://d17ivq9b7rppb3.cloudfront.net/original/academy/202006151751305f09238cc7cd595a83999b57b1ea2869.png">
+<img src="/screenshot/reference-layout.png">
 
 ### Referensi
 Referensi diambil dari Behance, sebuah design aplikasi mobile bernama [Pock Wallet](https://www.behance.net/gallery/210214087/Pock-Wallet-Mobile-App-UXUI-Design).
