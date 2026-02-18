@@ -27,6 +27,7 @@ class HeaderSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bool isTitleEmpty = title == null || title!.isEmpty;
+
     return Scaffold(
       backgroundColor: ThemeColors.backgroudColor,
       body: SafeArea(

@@ -5,7 +5,8 @@ import 'package:pock/component/list_menu_section.dart';
 import 'package:pock/component/profile_section.dart';
 
 class Dashboard extends StatelessWidget {
-  const Dashboard({super.key});
+  final String username;
+  const Dashboard({super.key, this.username = ''});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class Dashboard extends StatelessWidget {
         debugPrint('header section: right button pressed');
       },
       children: [
-        ProfileSection(),
+        ProfileSection(username: username),
         ActionSection(),
         const SizedBox(height: 24),
         ListMenuSection(),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pock/screen/dashboard.dart';
+import 'package:pock/screen/login.dart';
 
 void main() {
   runApp(const MainApp());
@@ -13,7 +13,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'pock: Your Wallet',
-      home: Dashboard(),
+      home: Login(),
     );
   }
 }

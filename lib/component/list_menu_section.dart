@@ -28,15 +28,17 @@ class ListMenuSection extends StatelessWidget {
     ];
 
     return Column(
-      spacing: -8,
       children: [
         for (var item in listMenu.asMap().entries)
-          ListMenuItemCard(
-            index: item.key,
-            menuId: item.value['menu_id'],
-            icon: item.value['icon'],
-            title: item.value['title'],
-            action: item.value['action'],
+          Transform.translate(
+            offset: Offset(0, (-8 * (item.key + 1))),
+            child: ListMenuItemCard(
+              index: item.key,
+              menuId: item.value['menu_id'],
+              icon: item.value['icon'],
+              title: item.value['title'],
+              action: item.value['action'],
+            ),
           ),
       ],
     );

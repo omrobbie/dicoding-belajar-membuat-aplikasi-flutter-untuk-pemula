@@ -3,7 +3,8 @@ import 'package:pock/component/custom_text.dart';
 import 'package:pock/component/profile_avatar.dart';
 
 class ProfileSection extends StatelessWidget {
-  const ProfileSection({super.key});
+  final String username;
+  const ProfileSection({super.key, this.username = ''});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class ProfileSection extends StatelessWidget {
 
             const CustomText(text: 'Morning,'),
 
-            const CustomText(text: 'omrobbie', fontSize: 26, fontWeight: .bold),
+            CustomText(text: username, fontSize: 26, fontWeight: .bold),
           ],
         ),
       ),
