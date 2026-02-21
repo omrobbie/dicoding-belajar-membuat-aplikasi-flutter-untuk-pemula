@@ -28,7 +28,7 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
+        child: SingleChildScrollView(
           padding: .symmetric(horizontal: 16),
           child: Center(
             child: Column(
