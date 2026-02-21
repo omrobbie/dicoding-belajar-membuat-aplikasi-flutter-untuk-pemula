@@ -13,6 +13,9 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   final TextEditingController _nameController = TextEditingController();
 
+  bool _isLoginEnabled = false;
+  String? _errorText;
+
   String name = "";
 
   @override
@@ -34,9 +37,24 @@ class _LoginState extends State<Login> {
               children: [
                 CustomText(text: 'Welcome to pock', fontSize: 32),
                 TextField(
+                  onChanged: (value) {
+                    setState(() {
+                      _isLoginEnabled = value.trim().length > 3;
+
+                      if (value.isEmpty) {
+                        _errorText = null;
+                      } else if (!_isLoginEnabled) {
+                        _errorText =
+                            'Your name is less than minimum characters allowed';
+                      } else {
+                        _errorText = null;
+                      }
+                    });
+                  },
                   controller: _nameController,
                   decoration: InputDecoration(
-                    hintText: 'Enter your name',
+                    labelText: 'Enter your name',
+                    errorText: _errorText,
                     border: OutlineInputBorder(
                       borderRadius: .circular(18),
                       borderSide: BorderSide(color: ThemeColors.grass),
@@ -48,17 +66,11 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            Dashboard(username: _nameController.text),
-                      ),
-                    );
-                  },
-                  style: ButtonStyle(
-                    backgroundColor: WidgetStateProperty.all(ThemeColors.lime),
+                  onPressed: _isLoginEnabled ? _onLoginPressed : null,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: _isLoginEnabled
+                        ? ThemeColors.lime
+                        : Colors.grey,
                   ),
                   child: CustomText(text: 'Login'),
                 ),
@@ -66,6 +78,15 @@ class _LoginState extends State<Login> {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  void _onLoginPressed() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => Dashboard(username: _nameController.text),
       ),
     );
   }
