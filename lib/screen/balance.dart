@@ -14,7 +14,7 @@ class Balance extends StatelessWidget {
       rightButtonIcon: Icons.north_east,
       rightButtonOnPressed: () {},
       children: [
-        SizedBox(height: 300),
+        SizedBox(height: 100),
         CustomText(text: 'Total balance'),
         CustomText(text: '\$ 12.350', fontSize: 48, fontWeight: .bold),
       ],

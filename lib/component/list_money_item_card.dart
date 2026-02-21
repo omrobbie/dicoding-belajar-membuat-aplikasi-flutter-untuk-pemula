@@ -17,26 +17,26 @@ class ListMoneyItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: BoxConstraints(minHeight: 100),
+      constraints: BoxConstraints(minHeight: 100, minWidth: .infinity),
       child: Container(
         padding: const .symmetric(horizontal: 20),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: .circular(18),
         ),
-        child: Row(
-          mainAxisAlignment: .spaceBetween,
-          children: [
-            Row(
-              spacing: 16,
-              children: [
-                if (imageUrl.isNotEmpty)
-                  ProfileAvatar(imageUrl: imageUrl, radius: 18),
-                CustomText(text: title, fontSize: 32),
-              ],
-            ),
-            CustomText(text: nominal),
-          ],
+        child: SingleChildScrollView(
+          scrollDirection: .horizontal,
+          child: Row(
+            mainAxisAlignment: .spaceBetween,
+            crossAxisAlignment: .center,
+            spacing: 16,
+            children: [
+              if (imageUrl.isNotEmpty)
+                ProfileAvatar(imageUrl: imageUrl, radius: 18),
+              CustomText(text: title, fontSize: 32),
+              CustomText(text: nominal),
+            ],
+          ),
         ),
       ),
     );

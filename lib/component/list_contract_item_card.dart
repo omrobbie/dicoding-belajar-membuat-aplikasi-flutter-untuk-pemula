@@ -20,39 +20,43 @@ class ListContractItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: BoxConstraints(minHeight: 100),
+      constraints: BoxConstraints(minHeight: 100, minWidth: .infinity),
       child: Container(
         padding: const .symmetric(horizontal: 12, vertical: 12),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: .circular(18),
         ),
-        child: Column(
-          mainAxisAlignment: .spaceBetween,
-          children: [
-            Row(
-              mainAxisAlignment: .spaceBetween,
-              children: [
-                Row(
-                  spacing: 12,
-                  children: [
-                    if (imageUrl.isNotEmpty)
-                      ProfileAvatar(imageUrl: imageUrl, radius: 18),
-                    CustomText(text: title, fontSize: 18),
-                  ],
-                ),
-                CustomText(text: nominal),
-              ],
-            ),
-            Row(
-              spacing: 8,
-              children: [
-                if (listType != null)
-                  for (var item in listType!)
-                    ChipLabel(text: item['title'], isActive: item['is_active']),
-              ],
-            ),
-          ],
+        child: SingleChildScrollView(
+          scrollDirection: .horizontal,
+          child: Column(
+            mainAxisAlignment: .spaceBetween,
+            crossAxisAlignment: .start,
+            children: [
+              Row(
+                mainAxisAlignment: .spaceBetween,
+                crossAxisAlignment: .center,
+                spacing: 12,
+                children: [
+                  if (imageUrl.isNotEmpty)
+                    ProfileAvatar(imageUrl: imageUrl, radius: 18),
+                  CustomText(text: title, fontSize: 18),
+                  CustomText(text: nominal),
+                ],
+              ),
+              Row(
+                spacing: 8,
+                children: [
+                  if (listType != null)
+                    for (var item in listType!)
+                      ChipLabel(
+                        text: item['title'],
+                        isActive: item['is_active'],
+                      ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
