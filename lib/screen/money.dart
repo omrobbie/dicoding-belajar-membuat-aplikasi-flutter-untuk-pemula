@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pock/component/custom_text.dart';
 import 'package:pock/component/header_section.dart';
 import 'package:pock/component/list_money_item_card.dart';
+import 'package:pock/screen/wip.dart';
 
 class Money extends StatelessWidget {
   const Money({super.key});
@@ -33,9 +34,13 @@ class Money extends StatelessWidget {
     return HeaderSection(
       title: 'Money',
       leftButtonIcon: Icons.add,
-      leftButtonOnPressed: () {},
+      leftButtonOnPressed: () {
+        Wip.showWip(context);
+      },
       rightButtonIcon: Icons.south_east,
-      rightButtonOnPressed: () {},
+      rightButtonOnPressed: () {
+        Wip.showWip(context);
+      },
       children: [
         const SizedBox(height: 100),
         const Row(

@@ -3,6 +3,7 @@ import 'package:pock/component/action_section.dart';
 import 'package:pock/component/header_section.dart';
 import 'package:pock/component/list_menu_section.dart';
 import 'package:pock/component/profile_section.dart';
+import 'package:pock/screen/wip.dart';
 
 class Dashboard extends StatelessWidget {
   final String username;
@@ -13,11 +14,11 @@ class Dashboard extends StatelessWidget {
     return HeaderSection(
       leftButtonIcon: Icons.search,
       leftButtonOnPressed: () {
-        debugPrint('header section: left button pressed');
+        Wip.showWip(context);
       },
       rightButtonIcon: Icons.north_east,
       rightButtonOnPressed: () {
-        debugPrint('header section: right button pressed');
+        Wip.showWip(context);
       },
       children: [
         ProfileSection(username: username),

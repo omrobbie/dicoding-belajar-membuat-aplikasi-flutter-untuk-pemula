@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pock/component/custom_text.dart';
 import 'package:pock/component/header_section.dart';
 import 'package:pock/component/list_contract_item_card.dart';
+import 'package:pock/screen/wip.dart';
 
 class Contract extends StatelessWidget {
   const Contract({super.key});
@@ -46,9 +47,13 @@ class Contract extends StatelessWidget {
     return HeaderSection(
       title: 'Contracts',
       leftButtonIcon: Icons.add,
-      leftButtonOnPressed: () {},
+      leftButtonOnPressed: () {
+        Wip.showWip(context);
+      },
       rightButtonIcon: Icons.search,
-      rightButtonOnPressed: () {},
+      rightButtonOnPressed: () {
+        Wip.showWip(context);
+      },
       children: [
         SizedBox(height: 100),
         Row(

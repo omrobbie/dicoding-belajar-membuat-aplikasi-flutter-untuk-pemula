@@ -4,6 +4,7 @@ import 'package:pock/component/custom_text.dart';
 import 'package:pock/screen/balance.dart';
 import 'package:pock/screen/contract.dart';
 import 'package:pock/screen/money.dart';
+import 'package:pock/screen/wip.dart';
 
 class ListMenuItemCard extends StatelessWidget {
   final int index;
@@ -55,7 +56,7 @@ class ListMenuItemCard extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => Balance()),
                   );
                 default:
-                  debugPrint('list item card: $menuId');
+                  Wip.showWip(context);
               }
             },
             borderRadius: borderRadius,

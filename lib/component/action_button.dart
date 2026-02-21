@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pock/base/theme_colors.dart';
 import 'package:pock/component/custom_text.dart';
 import 'package:pock/screen/money.dart';
+import 'package:pock/screen/wip.dart';
 
 class ActionButton extends StatelessWidget {
   final String menuId;
@@ -34,16 +35,16 @@ class ActionButton extends StatelessWidget {
               onTap: () {
                 switch (menuId) {
                   case 'money':
-                    debugPrint('action button: $menuId');
+                    Wip.showWip(context);
                   case 'withdraw':
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Money()),
                     );
                   case 'transfer':
-                    debugPrint('action button: $menuId');
+                    Wip.showWip(context);
                   default:
-                    debugPrint('action button: $menuId');
+                    Wip.showWip(context);
                 }
               },
               borderRadius: borderRadius,
